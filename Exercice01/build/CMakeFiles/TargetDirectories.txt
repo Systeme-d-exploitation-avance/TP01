@@ -1,3 +1,0 @@
-/mnt/c/Users/Isamet/Git/TP01/Exercice01/build/CMakeFiles/Exercice01.dir
-/mnt/c/Users/Isamet/Git/TP01/Exercice01/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Isamet/Git/TP01/Exercice01/build/CMakeFiles/rebuild_cache.dir

@@ -11,6 +11,7 @@
 #define STDERR 2
 
 #define MAX_PATH_LENGTH 4096
+#define BUFFER_SIZE 8192
 
 
 #define USAGE_SYNTAX "[OPTIONS] -i INPUT -o OUTPUT"
@@ -173,9 +174,44 @@ int main(int argc, char** argv)
           "verbose", is_verbose_mode);
 
   // Business logic must be implemented at this point
+  // V1.0
 
-  /* LOREM IPSUM DOT SIR AMET */
+    // Open the source file for reading
+    FILE* source_file = fopen(bin_input_param, "rb");
+    if (source_file == NULL) {
+        perror("Failed to open the source file for reading");
+        exit(EXIT_FAILURE);
+    }
 
+    // Create or open the destination file for writing
+    FILE* dest_file = fopen(bin_output_param, "wb");
+    if (dest_file == NULL) {
+        perror("Failed to open or create the destination file for writing");
+        fclose(source_file);  // Close the source file to release resources
+        exit(EXIT_FAILURE);   // Exit the program with a failure status
+    }
+
+    char buffer[BUFFER_SIZE];  // Allocate a buffer to store read data
+    size_t bytes_read;         // Variable to store the number of bytes read
+
+    // Loop to read and write the file contents in chunks
+    while ((bytes_read = fread(buffer, 1, BUFFER_SIZE, source_file)) > 0) {
+        // Write the read data to the destination file
+        if (fwrite(buffer, 1, bytes_read, dest_file) != bytes_read) {
+            perror("Failed to write to destination file");
+            fclose(source_file);  // Close the source file
+            fclose(dest_file);    // Close the destination file
+            exit(EXIT_FAILURE);   // Exit the program with a failure status
+        }
+
+        if (is_verbose_mode) {
+            printf("Copied %zu bytes\n", bytes_read);  // Print the number of bytes copied if in verbose mode
+        }
+    }
+
+    // Close the files
+    fclose(source_file);  // Close the source file
+    fclose(dest_file);    // Close the destination file
 
   // Freeing allocated data
   free_if_needed(bin_input_param);

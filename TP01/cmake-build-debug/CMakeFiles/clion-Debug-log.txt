@@ -1,0 +1,10 @@
+/home/ubuntu/.cache/JetBrains/RemoteDev/dist/b21c2b5ff1f19_CLion-2023.2.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ubuntu/.cache/JetBrains/RemoteDev/dist/b21c2b5ff1f19_CLion-2023.2.2/bin/ninja/linux/x64/ninja -G Ninja -S /mnt/c/Users/Isamet/Git/TP01/TP01 -B /mnt/c/Users/Isamet/Git/TP01/TP01/cmake-build-debug
+-- The C compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (1.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/c/Users/Isamet/Git/TP01/TP01/cmake-build-debug

@@ -1,3 +1,0 @@
-/mnt/c/Users/Isamet/Git/TP01/TP01/cmake-build-debug/CMakeFiles/TP01.dir
-/mnt/c/Users/Isamet/Git/TP01/TP01/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Isamet/Git/TP01/TP01/cmake-build-debug/CMakeFiles/rebuild_cache.dir
